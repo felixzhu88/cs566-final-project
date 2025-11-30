@@ -42,15 +42,9 @@ pip install -r requirements.txt
 
 ## 2. Data Preparation
 
-The dataset used is the **Kaggle Driver Drowsiness Dataset (DDD)**, derived from the Real-Life Drowsiness Dataset with cropped faces.
+The Driver Drowsiness Dataset (DDD) is an extracted and cropped faces of drivers from the videos of the Real-Life Drowsiness Dataset. The frames were extracted from videos as images using VLC software. After that, the Viola-Jones algorithm has been used to extract the region of interest from captured images. The obtained dataset (DDD) has been used for training and testing CNN architecture for driver drowsiness detection in the “Detection and Prediction of Driver Drowsiness for the Prevention of Road Accidents Using Deep Neural Networks Techniques” paper.
 
-1. Download the dataset from Kaggle and place it in:
-   ```
-   dataset/data_1/
-   ```
-   (Keep the original folder structure: subfolders for alert/drowsy classes)
-
-2. Run the data preview and preprocessing notebook:
+1. Check the dataset/data_preview.ipynb to download and preprocess the data
 
 ```bash
 jupyter notebook dataset/data_preview.ipynb
@@ -68,7 +62,7 @@ This notebook will:
 ```
 .
 ├── dataset/                     → Raw and processed data
-│   └── data_1/                  → Original Kaggle DDD dataset (alert/drowsy folders)
+│   └── data_1/                  → DDD dataset (alert/drowsy folders)
 │
 ├── EAR.py                       → Eye Aspect Ratio calculation module
 ├── MAR.py                       → Mouth Aspect Ratio (yawning detection) module
