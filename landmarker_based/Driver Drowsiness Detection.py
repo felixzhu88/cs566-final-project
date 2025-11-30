@@ -7,11 +7,10 @@ import imutils
 import time
 import dlib
 import math
-from cv2 import cv2
+import cv2
 import numpy as np
 from EAR import eye_aspect_ratio
 from MAR import mouth_aspect_ratio
-from HeadPose import getHeadTiltAndCoords
 
 # initialize dlib's face detector (HOG-based) and then create the
 # facial landmark predictor
@@ -200,16 +199,6 @@ while True:
         #Draw the determinant image points onto the person's face
         for p in image_points:
             cv2.circle(frame, (int(p[0]), int(p[1])), 3, (0, 0, 255), -1)
-
-        (head_tilt_degree, start_point, end_point, 
-            end_point_alt) = getHeadTiltAndCoords(size, image_points, frame_height)
-
-        cv2.line(frame, start_point, end_point, (255, 0, 0), 2)
-        cv2.line(frame, start_point, end_point_alt, (0, 0, 255), 2)
-
-        if head_tilt_degree:
-            cv2.putText(frame, 'Head Tilt Degree: ' + str(head_tilt_degree[0]), (170, 20),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
         # extract the mouth coordinates, then use the
         # coordinates to compute the mouth aspect ratio
