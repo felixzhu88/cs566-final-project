@@ -17,20 +17,6 @@ export default function Team() {
             This drowsiness detection system was developed as a collaborative computer vision project for CS566 @UW-Madison w/ Mohit Gupta.
             Combining techniques in machine learning, real-time video processing, and computer vision.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center">
-            <div className="bg-slate-900 border border-purple-500/30 rounded-lg px-4 py-2 text-sm">
-              Python • OpenCV
-            </div>
-            <div className="bg-slate-900 border border-purple-500/30 rounded-lg px-4 py-2 text-sm">
-              dlib • Facial Landmarks
-            </div>
-            <div className="bg-slate-900 border border-purple-500/30 rounded-lg px-4 py-2 text-sm">
-              SciPy • NumPy
-            </div>
-            <div className="bg-slate-900 border border-purple-500/30 rounded-lg px-4 py-2 text-sm">
-              Real-time Detection
-            </div>
-          </div>
         </div>
       </div>
     </section>

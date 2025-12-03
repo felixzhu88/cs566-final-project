@@ -17,6 +17,11 @@ export default function Hero({ scrollToSection }) {
           Real-time facial landmark analysis using Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) 
           to detect driver drowsiness and prevent accidents.
         </p>
+        <p className="text-l text-gray-300 mb-12 max-w-3xl mx-auto">
+          Why? NHTSA Estimates that 100,000 car accidents a year are caused due to drowsy driving. Around 30% of fatalies from car accidents are due to impaired driving.
+          These tragic accidents can be prevented. It starts with detecting drowsy drivers, and stopping them from getting on the road.
+          By detecting a drowsy driver, we can then transition into getting help. Whether that is locking the car or sending a call for help.
+        </p>
         <div className="flex gap-4 justify-center">
           <button
             onClick={() => scrollToSection('demo')}

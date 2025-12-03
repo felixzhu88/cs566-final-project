@@ -3,7 +3,8 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Demo from './components/Demo';
 import HowItWorks from './components/HowItWorks';
-import Metrics from './components/Metrics';
+import Approaches from './components/Approaches';
+//import Metrics from './components/Metrics';
 import Team from './components/Team';
 import Footer from './components/Footer';
 
@@ -21,7 +22,7 @@ export default function App() {
       <Hero scrollToSection={scrollToSection} />
       <Demo />
       <HowItWorks />
-      <Metrics />
+      <Approaches />
       <Team />
       <Footer />
     </div>
