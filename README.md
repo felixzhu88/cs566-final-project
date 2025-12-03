@@ -68,7 +68,7 @@ This notebook will:
 ├── MAR.py                       → Mouth Aspect Ratio (yawning detection) module
 ├── Drowsiness_detection_landmarker.ipynb       → Landmark-based rule method demo
 ├── Drowsiness_detection_landmarker_v2.ipynb    → Improved landmark version
-├── Driver Drowsiness Detection.py              → Main real-time webcam demo
+├── Driver_Drowsiness_Detection_landmarker.py              → Obsolete real-time webcam demo
 │
 ├── lstm_based/
 │   ├── drowsiness_detection_lstm.ipynb         → CNN-LSTM training notebook
@@ -85,11 +85,28 @@ This notebook will:
 
 ## Usage Examples
 
-### Real-time Detection (Webcam)
-
+### Real-time Detection (Webcam) & uploaded video support 
 ```bash
-python "Driver Drowsiness Detection.py"
+python drowsiness_detection.py <input_video_path or webcam> \
+    --mode <landmarker_single | landmarker_adjacent | cnn_lstm> \
+    --output <optional_output_video_path>
 ```
+example commands
+```bash
+python drowsiness_detection.py ./test.mp4 --mode landmarker_adjacent
+python drowsiness_detection.py webcam --mode cnn_lstm
+```
+
+If no --output is provided, results will be automatically saved under: ./result/<same_filename_as_input>.mp4
+
+### Summary 
+| Mode                  | Description                                                                                 | Pros                                                                                                                                                     | Cons                                                                                                                                                                                                                    |
+| --------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `landmarker_single`   | Uses EAR (eye aspect ratio) + MAR (mouth aspect ratio) to classify each frame independently | - Very fast, lightweight<br>- No deep model required                                                                                                     | - Ignores temporal information<br>- Easily confused by **blinking** and **talking**, since it treats every frame as an independent sample                                                                               |
+| `landmarker_adjacent` | Applies temporal smoothing using a sliding window over recent landmark-based predictions    | - More stable against noise<br>- Better for continuous monitoring                                                                                        | - EAR/MAR thresholds are hard to tune                                                          |
+| `cnn_lstm`            | Deep learning inference using 5-frame visual sequences (CNN + LSTM model)                   | - Highest accuracy on our controlled test data<br>- Learns temporal fatigue patterns instead of fixed rules<br>- Displays real-time probability on video | - and sensitive to **individual facial ratios**, **camera distance**, and **resolution**.Requires similar camera angle and viewpoint as in the training set<br>- Our training data is relatively simple, so robustness to real-world noise, occlusion, and motion blur is limited<br>- Computationally heavier |
+
+
 
 ### Train CNN-LSTM Model
 
