@@ -68,7 +68,7 @@ export default function Demo() {
             <div className="p-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-semibold text-green-400">✓ Alert State</span>
-                <span className="text-xs text-gray-400">EAR: 0.28 | MAR: 0.45</span>
+                <span className="text-xs text-gray-400">EAR: 0.28 | MAR: ~0.67</span>
               </div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-green-500/20 border border-green-500/40 rounded px-3 py-1 text-xs text-center">
@@ -111,7 +111,7 @@ export default function Demo() {
             <div className="p-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-semibold text-red-400">⚠ Drowsy State</span>
-                <span className="text-xs text-gray-400">EAR: 0.14 | MAR: 0.72</span>
+                <span className="text-xs text-gray-400">EAR: 0.14 | MAR: 0.72-0.99</span>
               </div>
               <div className="flex gap-2">
                 <div className="flex-1 bg-red-500/20 border border-red-500/40 rounded px-3 py-1 text-xs text-center">
@@ -128,7 +128,8 @@ export default function Demo() {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-400 bg-slate-800 border border-purple-500/20 rounded-lg px-6 py-4 inline-block">
             <strong className="text-purple-400">Demo:</strong> These videos show our drowsiness detection system analyzing facial landmarks in real-time. 
-            Click the videos to play/pause.
+            Click the videos to play/pause. 
+
           </p>
         </div>
       </div>
