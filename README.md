@@ -61,24 +61,32 @@ This notebook will:
 
 ```
 .
-├── dataset/                     → Raw and processed data
-│   └── data_1/                  → DDD dataset (alert/drowsy folders)
-│
-├── EAR.py                       → Eye Aspect Ratio calculation module
-├── MAR.py                       → Mouth Aspect Ratio (yawning detection) module
-├── Drowsiness_detection_landmarker.ipynb       → Landmark-based rule method demo
-├── Drowsiness_detection_landmarker_v2.ipynb    → Improved landmark version
-├── Driver_Drowsiness_Detection_landmarker.py              → Obsolete real-time webcam demo
-│
+├── Drowsiness_detection_video.py        → Main entry for video/webcam inference
+├── README.md                            → Project overview (this file)
+├── report.md                            → Detailed project report
+├── requirements.txt                     → Python dependencies
+├── train.png / output.png               → Visual artifacts (training curves, sample output)
+├── data/
+│   └── splitted_Data/                   → Train/val/test splits of drowsy vs non-drowsy frames
+├── dataset/
+│   └── data_preview.ipynb               → Dataset exploration and preprocessing notebook
+├── landmarker_based/
+│   ├── EAR.py / MAR.py                  → Landmark utility modules
+│   ├── Driver_Drowsiness_Detection_landmarker.py
+│   ├── Drowsiness_detection_landmarker.ipynb
+│   ├── Drowsniess_detection_landmarker_v2.ipynb
+│   └── dlib_shape_predictor/shape_predictor_68_face_landmarks.dat
 ├── lstm_based/
-│   ├── drowsiness_detection_lstm.ipynb         → CNN-LSTM training notebook
-│   ├── drowsiness_lstm_model.pkl              → Trained CNN-LSTM model (optional)
-│
-├── train.png                    → Training curves (loss/accuracy)
-├── report.md                    → Project report (Markdown)
-├── requirements.txt             → Python dependencies
-├── README.md                    → This file
-└── .gitignore
+│   ├── drowsiness_detection_lstm.ipynb  → CNN-LSTM training notebook
+│   └── drowsiness_lstm_model.pkl        → Serialized CNN-LSTM model
+├── result/
+│   ├── drowsy.mp4
+│   ├── non-drowsy.mp4
+│   └── webcam_output.mp4
+└── self-uploaded/                       → User-supplied demo videos and outputs
+    ├── drowsy.mp4
+    ├── non-drowsy.mp4
+    └── result/
 ```
 
 ---
