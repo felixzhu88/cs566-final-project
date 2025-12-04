@@ -16,6 +16,16 @@ export default function Team() {
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             This drowsiness detection system was developed as a collaborative computer vision project for CS566 @UW-Madison w/ Mohit Gupta.
             Combining techniques in machine learning, real-time video processing, and computer vision.
+            Here is our {" "}
+              <a
+                href="https://github.com/felixzhu88/cs566-final-project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline"
+              >
+                GitHub
+              </a>
+              .
           </p>
         </div>
       </div>
