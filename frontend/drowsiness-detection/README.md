@@ -2,6 +2,8 @@
 
 ### Felix, Bin, Linda
 
+## To watch videos in web page, make sure you have ran npm start
+
 ## Available Scripts
 
 In the project directory, you can run:
