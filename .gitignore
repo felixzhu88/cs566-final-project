@@ -1,1 +1,3 @@
 /frontend/drowsiness-detection/public/videos/*.mp4
+.venv/
+landmarker_based/dlib_shape_predictor/
