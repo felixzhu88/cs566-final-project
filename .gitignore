@@ -1,7 +1,3 @@
-__pycache__/
+/frontend/drowsiness-detection/public/videos/*.mp4
 .venv/
-.DS_Store
-*.pyc
-data/
-node_modules/
-
+landmarker_based/dlib_shape_predictor/

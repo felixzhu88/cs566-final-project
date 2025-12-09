@@ -1,5 +1,5 @@
 import React from 'react';
-import { Eye, Activity, AlertTriangle } from 'lucide-react';
+import { Eye, Activity, AlertTriangle, Database, Cpu } from 'lucide-react';
 
 export default function HowItWorks() {
   return (
@@ -7,9 +7,28 @@ export default function HowItWorks() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">How It Works</h2>
-          <p className="text-gray-400">Advanced computer vision techniques for drowsiness detection</p>
+          <p className="text-gray-400">Image-based drowsiness detection using facial visual cues</p>
         </div>
 
+        {/* Data Source */}
+        <div className="mb-16 bg-slate-800 rounded-xl p-8 border border-purple-500/20">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-blue-500/20 w-14 h-14 rounded-lg flex items-center justify-center">
+              <Database className="w-7 h-7 text-blue-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">Dataset</h3>
+              <p className="text-gray-400 text-sm">Driver Drowsiness Dataset (DDD)</p>
+            </div>
+          </div>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            The Driver Drowsiness Dataset consists of extracted and cropped faces from the Real-Life Drowsiness Dataset. 
+            Frames were extracted from videos and the Viola-Jones algorithm was used to extract regions of interest. 
+            The dataset is split into training, validation, and test sets with drowsy and non-drowsy classifications.
+          </p>
+        </div>
+
+        {/* Three-Step Process */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Step 1 */}
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
@@ -19,7 +38,7 @@ export default function HowItWorks() {
             <h3 className="text-xl font-bold mb-3">1. Face Detection</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Using dlib's HOG-based face detector to locate the driver's face in the video frame, 
-              then identify 68 facial landmarks for precise feature extraction.
+              then identify 68 facial landmarks for precise feature extraction using the shape predictor model.
             </p>
           </div>
 
@@ -31,7 +50,7 @@ export default function HowItWorks() {
             <h3 className="text-xl font-bold mb-3">2. Feature Analysis</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Calculate Eye Aspect Ratio (EAR) from eye landmarks and Mouth Aspect Ratio (MAR) from mouth landmarks 
-              to quantify drowsiness indicators in real-time.
+              to quantify drowsiness indicators in real-time across video frames.
             </p>
           </div>
 
@@ -43,13 +62,13 @@ export default function HowItWorks() {
             <h3 className="text-xl font-bold mb-3">3. Classification</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Apply learned thresholds (EAR &lt; 0.17, MAR &gt; 0.69) with temporal smoothing across 5-frame sequences 
-              to classify drowsiness state and trigger alerts.
+              to classify drowsiness state and trigger real-time alerts.
             </p>
           </div>
         </div>
 
         {/* Technical Details */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="bg-slate-800 p-8 rounded-xl border border-purple-500/20">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <Eye className="w-6 h-6 text-purple-400" />
@@ -98,6 +117,37 @@ export default function HowItWorks() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* System Requirements */}
+        <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-xl p-8 border border-purple-500/30">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="bg-purple-500/20 w-14 h-14 rounded-lg flex items-center justify-center">
+              <Cpu className="w-7 h-7 text-purple-400" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold">Lightweight & Real-Time</h3>
+              <p className="text-gray-400 text-sm">Designed for consumer-grade hardware</p>
+            </div>
+          </div>
+          <p className="text-gray-300 text-sm leading-relaxed mb-4">
+            This system is optimized to run on CPU-only consumer hardware and can be deployed on embedded devices 
+            such as Raspberry Pi or Jetson Nano for real-world applications.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-1 text-xs">
+              CPU Compatible
+            </span>
+            <span className="bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-1 text-xs">
+              Raspberry Pi Ready
+            </span>
+            <span className="bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-1 text-xs">
+              Jetson Nano Compatible
+            </span>
+            <span className="bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-1 text-xs">
+              Real-Time Processing
+            </span>
           </div>
         </div>
       </div>

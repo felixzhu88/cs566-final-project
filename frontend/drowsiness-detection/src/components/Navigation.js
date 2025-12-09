@@ -9,10 +9,10 @@ export default function Navigation({ activeSection, scrollToSection }) {
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-2 rounded-lg">
             <Eye className="w-6 h-6" />
           </div>
-          <span className="text-xl font-bold">The Eye - Drowsiness Detection App</span>
+          <span className="text-xl font-bold">DrowsyGuard</span>
         </div>
         <div className="flex gap-6">
-          {['home', 'demo', 'how-it-works', 'metrics', 'team'].map((section) => (
+          {['home', 'demo', 'how-it-works', 'approaches', 'team'].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}

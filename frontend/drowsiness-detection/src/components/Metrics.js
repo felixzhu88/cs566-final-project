@@ -28,7 +28,7 @@ export default function Metrics() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Performance Metrics</h2>
-          <p className="text-gray-400">Video-level evaluation with temporal smoothing</p>
+          <p className="text-gray-400">Temporal rule-based method results (5-frame sequences with 3/5 voting)</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-6 mb-12">
