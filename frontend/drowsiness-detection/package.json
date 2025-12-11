@@ -1,7 +1,7 @@
 {
   "name": "drowsiness-detection",
   "version": "0.1.0",
-  "homepage": "https://felixzhu88.github.io/cs566-final-project.git",
+  "homepage": "https://felixzhu88.github.io/cs566-final-project",
   "private": true,
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.17",
