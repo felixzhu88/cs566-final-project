@@ -6,13 +6,13 @@ Check out our presentation here: [Final Presentation](https://youtu.be/fz3g-Gk9D
 
 A lightweight, real-time driver drowsiness detection system based on **image-based (visual) methods**, using facial landmarks and deep learning. The project compares three approaches:
 
-1. Rule-based single-frame detection (EAR + MAR)  
-2. Temporal rule-based method with multi-frame voting  
-3. CNN-LSTM spatio-temporal deep learning model  
+1. Rule-based single-frame detection (EAR + MAR)
+2. Temporal rule-based method with multi-frame voting
+3. CNN-LSTM spatio-temporal deep learning model
 
 The system is designed to run on consumer-grade hardware (CPU-only) and can be deployed on embedded devices such as Raspberry Pi or Jetson Nano.
 
-This work is inspired by the comprehensive review:  
+This work is inspired by the comprehensive review:
 **Albadawi, Y.; Takruri, M.; Awad, M. "A Review of Recent Developments in Driver Drowsiness Detection Systems." Sensors 2022, 22(5), 2069.** [[Link]](https://doi.org/10.3390/s22052069)
 
 ---
@@ -54,6 +54,7 @@ jupyter notebook dataset/data_preview.ipynb
 ```
 
 This notebook will:
+
 - Load and visualize sample images
 - Show class distribution
 - Prepare the data structure expected by training scripts
@@ -96,13 +97,16 @@ This notebook will:
 
 ## Usage Examples
 
-### Real-time Detection (Webcam) & uploaded video support 
+### Real-time Detection (Webcam) & uploaded video support
+
 ```bash
 python Drowsiness_detection_video.py <input_video_path or webcam> \
     --mode <landmarker_single | landmarker_adjacent | cnn_lstm> \
     --output <optional_output_video_path>
 ```
+
 example commands
+
 ```bash
 python Drowsiness_detection_video.py ./test.mp4 --mode landmarker_adjacent
 python Drowsiness_detection_video.py webcam --mode cnn_lstm
@@ -110,18 +114,18 @@ python Drowsiness_detection_video.py webcam --mode cnn_lstm
 
 If no --output is provided, results will be automatically saved under: ./result/<same_filename_as_input>.mp4
 
-### Summary 
-| Mode                  | Description                                                                                 | Pros                                                                                                                                                     | Cons                                                                                                                                                                                                                    |
-| --------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `landmarker_single`   | Uses EAR (eye aspect ratio) + MAR (mouth aspect ratio) to classify each frame independently | - Very fast, lightweight<br>- No deep model required                                                                                                     | - Ignores temporal information<br>- Easily confused by **blinking** and **talking**, since it treats every frame as an independent sample                                                                               |
-| `landmarker_adjacent` | Applies temporal smoothing using a sliding window over recent landmark-based predictions    | - More stable against noise<br>- Better for continuous monitoring                                                                                        | - EAR/MAR thresholds are hard to tune                                                          |
-| `cnn_lstm`            | Deep learning inference using 5-frame visual sequences (CNN + LSTM model)                   | - Highest accuracy on our controlled test data<br>- Learns temporal fatigue patterns instead of fixed rules<br>- Displays real-time probability on video | - and sensitive to **individual facial ratios**, **camera distance**, and **resolution**.Requires similar camera angle and viewpoint as in the training set<br>- Our training data is relatively simple, so robustness to real-world noise, occlusion, and motion blur is limited<br>- Computationally heavier |
+### Summary
 
-
+| Mode                    | Description                                                                                 | Pros                                                                                                                                                             | Cons                                                                                                                                                                                                                                                                                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `landmarker_single`   | Uses EAR (eye aspect ratio) + MAR (mouth aspect ratio) to classify each frame independently | - Very fast, lightweight`<br>`- No deep model required                                                                                                         | - Ignores temporal information`<br>`- Easily confused by **blinking** and **talking**, since it treats every frame as an independent sample                                                                                                                                                                               |
+| `landmarker_adjacent` | Applies temporal smoothing using a sliding window over recent landmark-based predictions    | - More stable against noise`<br>`- Better for continuous monitoring                                                                                            | - EAR/MAR thresholds are hard to tune                                                                                                                                                                                                                                                                                                   |
+| `cnn_lstm`            | Deep learning inference using 5-frame visual sequences (CNN + LSTM model)                   | - Highest accuracy on our controlled test data`<br>`- Learns temporal fatigue patterns instead of fixed rules`<br>`- Displays real-time probability on video | - and sensitive to**individual facial ratios**, **camera distance**, and **resolution**.Requires similar camera angle and viewpoint as in the training set`<br>`- Our training data is relatively simple, so robustness to real-world noise, occlusion, and motion blur is limited`<br>`- Computationally heavier |
 
 ### Train CNN-LSTM Model
 
 Open and run:
+
 ```bash
 jupyter notebook lstm_based/drowsiness_detection_lstm.ipynb
 ```
@@ -129,6 +133,7 @@ jupyter notebook lstm_based/drowsiness_detection_lstm.ipynb
 ### Run Landmark-based Rule Method
 
 Open one of the notebooks:
+
 ```bash
 jupyter notebook landmarker_based/Drowsniess_detection_landmarker_v2.ipynb
 ```
@@ -137,11 +142,11 @@ jupyter notebook landmarker_based/Drowsniess_detection_landmarker_v2.ipynb
 
 ## Results Summary
 
-| Method                  | Accuracy | Drowsy Recall | F1-score |
-|-------------------------|----------|---------------|----------|
-| Rule-Based (single frame) | 0.57     | 0.43          | 0.51     |
-| Temporal Rule-Based     | 0.74     | 0.86          | 0.82     |
-| **CNN-LSTM**            | **1.00** | **1.00**      | **1.00** |
+| Method                    | Accuracy       | Drowsy Recall  | F1-score       |
+| ------------------------- | -------------- | -------------- | -------------- |
+| Rule-Based (single frame) | 0.57           | 0.43           | 0.51           |
+| Temporal Rule-Based       | 0.74           | 0.86           | 0.82           |
+| **CNN-LSTM**        | **1.00** | **1.00** | **1.00** |
 
 > The CNN-LSTM model shows perfect performance on the test split, demonstrating the power of spatio-temporal modeling for image-based drowsiness detection.
 
@@ -156,5 +161,20 @@ jupyter notebook landmarker_based/Drowsniess_detection_landmarker_v2.ipynb
 
 ---
 
-**License**: MIT  
+
+
+## 🌐 Interactive Website
+
+******View our interactive project website:******[**https://felixzhu88.github.io/cs566-final-project**](**https://felixzhu88.github.io/cs566-final-project**)
+
+The website features:
+**-** Live demonstration videos
+**-** Interactive performance metrics
+**-** Technical deep-dive into our methods
+**-** Comparison of three detection approaches
+**-** Modern, responsive design
+
+For local development and deployment instructions, see **[**frontend/drowsiness-detection/README.md**](**frontend/drowsiness-detection/README.md**)**
+
+**License**: MIT
 **Authors**: Felix Zhu, Bin Xiao, Linda Wei – University of Wisconsin–Madison
