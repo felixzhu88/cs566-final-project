@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/felixzhu88/cs566-final-project.git/static/css/main.0d950ca5.css",
+    "main.js": "/felixzhu88/cs566-final-project.git/static/js/main.e70dcf85.js",
+    "static/js/453.41c465f7.chunk.js": "/felixzhu88/cs566-final-project.git/static/js/453.41c465f7.chunk.js",
+    "index.html": "/felixzhu88/cs566-final-project.git/index.html",
+    "main.0d950ca5.css.map": "/felixzhu88/cs566-final-project.git/static/css/main.0d950ca5.css.map",
+    "main.e70dcf85.js.map": "/felixzhu88/cs566-final-project.git/static/js/main.e70dcf85.js.map",
+    "453.41c465f7.chunk.js.map": "/felixzhu88/cs566-final-project.git/static/js/453.41c465f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d950ca5.css",
+    "static/js/main.e70dcf85.js"
+  ]
+}
