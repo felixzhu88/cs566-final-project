@@ -99,7 +99,6 @@ export default function Challenges() {
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 rounded-xl p-6 border border-purple-500/30">
-              <div className="text-4xl mb-3">🎯</div>
               <h4 className="font-bold mb-2">Temporal Context Matters</h4>
               <p className="text-sm text-gray-300">
                 Analyzing sequences of frames dramatically improved accuracy (57% → 74%) compared to 
@@ -108,7 +107,6 @@ export default function Challenges() {
             </div>
 
             <div className="bg-gradient-to-br from-pink-900/30 to-pink-800/30 rounded-xl p-6 border border-pink-500/30">
-              <div className="text-4xl mb-3">🧠</div>
               <h4 className="font-bold mb-2">Deep Learning Superiority</h4>
               <p className="text-sm text-gray-300">
                 CNN-LSTM achieved 100% accuracy by learning complex spatio-temporal patterns that rule-based 
@@ -117,7 +115,6 @@ export default function Challenges() {
             </div>
 
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 rounded-xl p-6 border border-blue-500/30">
-              <div className="text-4xl mb-3">⚖️</div>
               <h4 className="font-bold mb-2">Accuracy vs. Efficiency Trade-off</h4>
               <p className="text-sm text-gray-300">
                 Different applications require different solutions: rule-based for edge devices with limited 
@@ -178,14 +175,14 @@ export default function Challenges() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="bg-slate-900 rounded-lg p-4 border border-purple-500/20">
-                <h4 className="font-semibold text-purple-400 mb-2">🎯 Enhanced Robustness</h4>
+                <h4 className="font-semibold text-purple-400 mb-2">Enhanced Robustness</h4>
                 <p className="text-sm text-gray-400">
                   Test on challenging datasets (NTHU-DDD), implement attention mechanisms for better 
                   interpretability, and add multi-modal sensing (audio for yawn detection).
                 </p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4 border border-purple-500/20">
-                <h4 className="font-semibold text-pink-400 mb-2">🚀 Edge Deployment</h4>
+                <h4 className="font-semibold text-pink-400 mb-2">Edge Deployment</h4>
                 <p className="text-sm text-gray-400">
                   Optimize models for Raspberry Pi and Jetson Nano, implement model quantization, 
                   and create lightweight variants for real-time embedded performance.
@@ -194,14 +191,14 @@ export default function Challenges() {
             </div>
             <div className="space-y-4">
               <div className="bg-slate-900 rounded-lg p-4 border border-purple-500/20">
-                <h4 className="font-semibold text-blue-400 mb-2">🔔 Alert Systems</h4>
+                <h4 className="font-semibold text-blue-400 mb-2">Alert Systems</h4>
                 <p className="text-sm text-gray-400">
                   Integrate audio/visual warnings, smartphone notifications via IoT connectivity, 
                   and progressive alert levels based on drowsiness severity.
                 </p>
               </div>
               <div className="bg-slate-900 rounded-lg p-4 border border-purple-500/20">
-                <h4 className="font-semibold text-green-400 mb-2">📊 Personalization</h4>
+                <h4 className="font-semibold text-green-400 mb-2">Personalization</h4>
                 <p className="text-sm text-gray-400">
                   Implement per-user calibration for threshold adaptation, learn individual baseline 
                   patterns, and adapt to different driving conditions over time.

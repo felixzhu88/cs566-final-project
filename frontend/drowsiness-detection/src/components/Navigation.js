@@ -12,7 +12,7 @@ export default function Navigation({ activeSection, scrollToSection }) {
           <span className="text-xl font-bold">DrowsyGuard</span>
         </div>
         <div className="flex gap-6">
-          {['home', 'demo', 'how-it-works', 'approaches', 'team'].map((section) => (
+          {['home', 'demo', 'how-it-works', 'approaches', 'implementation', 'challenges', 'team'].map((section) => (
             <button
               key={section}
               onClick={() => scrollToSection(section)}

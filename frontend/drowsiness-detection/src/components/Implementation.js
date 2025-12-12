@@ -160,8 +160,8 @@ export default function Implementation() {
                   <p className="text-gray-400 text-xs mt-1">Mouth aspect ratio calculation</p>
                 </div>
                 <div className="bg-slate-900 rounded-lg p-3 border border-slate-700">
-                  <code className="text-purple-300">drowsiness_detection.py</code>
-                  <p className="text-gray-400 text-xs mt-1">Main inference script with mode selection</p>
+                  <code className="text-purple-300">Drowsiness_detection_video.py</code>
+                  <p className="text-gray-400 text-xs mt-1">Main inference script with mode selection (webcam or upload)</p>
                 </div>
               </div>
             </div>
