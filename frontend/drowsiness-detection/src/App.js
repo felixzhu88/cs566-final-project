@@ -7,6 +7,8 @@ import Approaches from './components/Approaches';
 //import Metrics from './components/Metrics';
 import Team from './components/Team';
 import Footer from './components/Footer';
+import Implementation from './components/Implementation';
+import Challenges from './components/Challenges';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -23,6 +25,8 @@ export default function App() {
       <Demo />
       <HowItWorks />
       <Approaches />
+      <Implementation />
+      <Challenges />
       <Team />
       <Footer />
     </div>
