@@ -32,7 +32,7 @@ export default function Hero({ scrollToSection }) {
           We developed a real-time, image-based drowsiness detection system that monitors driver 
           facial cues to identify early signs of fatigue.
           This work is inspired by comprehensive research in driver drowsiness detection systems, particularly 
-          the review by Albadawi et al. (2022), which categorizes detection methods into: Behavioral Methods, Physiological Methods, Visual Methods
+          the review by Albadawi et al. (2022), which categorizes detection methods into: Behavioral Methods, Physiological Methods, Visual Methods.
           Currently, Samsara is an industry example with this product readily available.
         </p>
         <div className="flex gap-4 justify-center">
