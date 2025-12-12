@@ -7,7 +7,7 @@ export default function Challenges() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Challenges & More</h2>
-          <p className="text-gray-400">Problems encountered and lessons learned</p>
+          <p className="text-gray-400">Problems encountered, insights, limitations, and future plans</p>
         </div>
 
         {/* challenges */}
@@ -24,7 +24,7 @@ export default function Challenges() {
                 due to differences in facial structure, camera angle, and distance.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Implemented data-driven threshold learning using percentile analysis 
+                <strong>Potential Solution:</strong> Implemented data-driven threshold learning using percentile analysis 
                 on training data. For production systems, per-user calibration would be ideal.
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function Challenges() {
                 leading to excessive false alarms.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Implemented temporal smoothing with 5-frame sliding windows and majority 
+                <strong>Potential Solution:</strong> Implemented temporal smoothing with 5-frame sliding windows and majority 
                 voting, requiring 3+ consecutive drowsy frames for positive classification.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function Challenges() {
                 and driver demographics, affecting real-world generalization.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Applied data augmentation (brightness, contrast, rotation). Future work 
+                <strong>Potential Solution:</strong> Applied data augmentation (brightness, contrast, rotation). Future work 
                 should include more diverse datasets like NTHU-DDD.
               </p>
             </div>
@@ -60,32 +60,8 @@ export default function Challenges() {
                 overfitting to the relatively simple test set.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Added dropout layers and early stopping. The perfect score indicates 
+                <strong>Potential Solution:</strong> Added dropout layers and early stopping. The perfect score indicates 
                 the model works well on similar data but requires testing on more challenging, real-world scenarios.
-              </p>
-            </div>
-
-            <div className="bg-slate-800 rounded-xl p-6 border border-red-500/20">
-              <h4 className="font-bold text-lg mb-3 text-red-400">5. Real-Time Performance Trade-offs</h4>
-              <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                <strong>Problem:</strong> CNN-LSTM model required more computational resources, potentially 
-                limiting deployment on low-power embedded devices.
-              </p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Optimized model architecture and provided multiple detection modes. 
-                Rule-based methods offer faster alternatives for resource-constrained scenarios.
-              </p>
-            </div>
-
-            <div className="bg-slate-800 rounded-xl p-6 border border-red-500/20">
-              <h4 className="font-bold text-lg mb-3 text-red-400">6. Occlusion & Accessories</h4>
-              <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                <strong>Problem:</strong> Sunglasses, masks, and poor lighting conditions interfered with facial 
-                landmark detection, causing system failures.
-              </p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                <strong>Solution:</strong> Implemented robust face detection checks. Future improvements could 
-                include infrared cameras or alternative sensors for low-light conditions.
               </p>
             </div>
           </div>
